@@ -1,5 +1,5 @@
 {
-  "name": "rate-dashboard",
+  "name": "ai-sales-call-rater",
   "version": "1.0.0",
   "description": "Call Center Audio Rating Dashboard",
   "main": "server.js",

@@ -1,4 +1,4 @@
-# Audio Rating Dashboard
+# AI Sales Call Rater
 
 A full-stack web application for rating call center audio recordings using AI. Upload or record audio files and receive detailed evaluations based on phone intelligibility, pronunciation clarity, business English delivery, confidence & sales tone, pace & smoothness, and recording quality.
 
