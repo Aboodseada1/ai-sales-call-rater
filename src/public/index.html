@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateFlow - AI Voice Assessment Platform</title>
+  <meta name="description" content="Professional AI-powered voice assessment for call center hiring. Evaluate candidate quality in under a minute.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%232563eb' rx='6' width='32' height='32'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Inter,sans-serif' font-weight='800' font-size='12'>RF</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="brand">
+        <div class="brand-icon">RF</div>
+        <div class="brand-text">
+          <span class="brand-name">RateFlow</span>
+          <span class="brand-tagline">AI Voice Assessment</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          Assess
+        </a>
+        <a href="/docs" class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+          API Docs
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Professional Hiring Intelligence
+          </div>
+          <h1 class="hero-title">
+            Evaluate candidate <span class="hero-title-highlight">English proficiency</span> in under one minute
+          </h1>
+          <p class="hero-description">
+            Upload or record audio to get an AI scorecard for phone intelligibility, pronunciation, business English delivery, confidence, pace, and recording quality. Designed for hiring cold call agents.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h3 class="hero-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            How It Works
+          </h3>
+          <ol class="hero-steps">
+            <li class="hero-step">
+              <span class="hero-step-number">1</span>
+              <span class="hero-step-text">Provide candidate audio</span>
+            </li>
+            <li class="hero-step">
+              <span class="hero-step-number">2</span>
+              <span class="hero-step-text">Run AI-powered analysis</span>
+            </li>
+            <li class="hero-step">
+              <span class="hero-step-number">3</span>
+              <span class="hero-step-text">Review score and insights</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="upload-section">
+      <!-- Upload & Record Grid -->
+      <div class="upload-grid">
+        <!-- Upload Card -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span class="card-title-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+              </span>
+              Upload Audio
+            </h2>
+          </div>
+          <div class="upload-zone" id="uploadZone">
+            <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.mp4,.webm,.m4a">
+            <div class="upload-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+            </div>
+            <h3 class="upload-title">Drop audio file here</h3>
+            <p class="upload-subtitle">or click to browse</p>
+            <p class="upload-formats">MP3, WAV, OGG, MP4, WEBM, M4A - Max 15MB</p>
+          </div>
+        </section>
+
+        <!-- Record Card -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span class="card-title-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </span>
+              Record Audio
+            </h2>
+          </div>
+          <div class="record-section">
+            <button class="record-btn" id="recordBtn" type="button" aria-label="Toggle recording">
+              <span class="record-btn-inner"></span>
+            </button>
+            <div class="timer-display" id="timerDisplay">00:00</div>
+            <p class="record-hint">Click to start recording with your microphone</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Audio Preview -->
+      <section class="audio-preview" id="audioPreview">
+        <div class="audio-preview-header">
+          <div>
+            <h4 class="audio-preview-title">Audio Ready</h4>
+            <p class="audio-preview-filename" id="audioFileName">Preview your recording</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="clearBtn" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            Clear
+          </button>
+        </div>
+        <audio id="audioPlayer" controls></audio>
+      </section>
+
+      <!-- Error Message -->
+      <div class="error-message" id="errorMessage">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <span id="errorText"></span>
+      </div>
+
+      <!-- Submit Button -->
+      <section class="actions">
+        <button class="btn btn-primary btn-lg" id="submitBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          Analyze Candidate
+        </button>
+      </section>
+
+      <!-- Loading Overlay -->
+      <section class="loading-overlay" id="loadingOverlay">
+        <div class="loader-spinner"></div>
+        <p class="loader-text" id="loadingText">Uploading audio...</p>
+        <div class="loader-progress">
+          <div class="loader-progress-bar"></div>
+        </div>
+      </section>
+
+      <!-- Results Card -->
+      <section class="result-card" id="resultCard">
+        <!-- Model Badge -->
+        <div class="model-badge" id="modelBadge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+          <span id="modelName">gemini-3.1-pro-preview</span>
+        </div>
+
+        <!-- Score Header -->
+        <div class="score-header">
+          <div class="score-group">
+            <span class="score-label">Overall Score</span>
+            <div class="score-number">
+              <span id="scoreNumber">0</span><span class="score-max">/10</span>
+            </div>
+          </div>
+          <div class="recommendation-badge badge-neutral" id="recommendationBadge">Neutral</div>
+        </div>
+
+        <!-- Transcription Section -->
+        <div class="transcription-section" id="transcriptionSection">
+          <h4 class="transcription-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Transcription
+          </h4>
+          <div class="transcription-content" id="transcriptionContent"></div>
+        </div>
+
+        <!-- Criteria Section -->
+        <div class="criteria-section" id="criteriaContainer">
+          <!-- Criteria items will be inserted here -->
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-box">
+          <p class="summary-text" id="summaryText"></p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="details-grid">
+          <div class="detail-box strengths">
+            <h4 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Strengths
+            </h4>
+            <ul class="detail-list" id="strengthsList"></ul>
+          </div>
+          <div class="detail-box weaknesses">
+            <h4 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+              Areas for Improvement
+            </h4>
+            <ul class="detail-list" id="weaknessesList"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

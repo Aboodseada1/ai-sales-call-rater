@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation - RateFlow</title>
+  <meta name="description" content="RateFlow API documentation. Simple REST API for voice assessment integration.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%232563eb' rx='6' width='32' height='32'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Inter,sans-serif' font-weight='800' font-size='12'>RF</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="brand">
+        <div class="brand-icon">RF</div>
+        <div class="brand-text">
+          <span class="brand-name">RateFlow</span>
+          <span class="brand-tagline">Developer Platform</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          Assess
+        </a>
+        <a href="/docs" class="nav-link active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+          API Docs
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Developer Reference
+      </div>
+      <h1 class="hero-title">
+        Simple API for <span class="hero-title-highlight">voice rating</span> pipelines
+      </h1>
+    </section>
+
+    <!-- Authentication -->
+    <section class="card" style="margin-bottom: 24px;">
+      <div class="card-header">
+        <h2 class="card-title">
+          <span class="card-title-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          Authentication
+        </h2>
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 15px;">
+        All API requests require an <code style="background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 13px;">x-api-key</code> header.
+      </p>
+      <div class="code-block-wrapper">
+        <pre class="code-block">x-api-key: CGview98!!</pre>
+        <button class="copy-btn" data-copy>Copy</button>
+      </div>
+    </section>
+
+    <!-- Endpoints -->
+    <section class="endpoint-card">
+      <div class="endpoint-header">
+        <span class="method-badge method-post">POST</span>
+        <span class="endpoint-url">/api/v1/rate</span>
+      </div>
+      <div class="endpoint-body">
+        <p class="endpoint-description">
+          Upload one audio file and receive a complete AI rating report. Supports MP3, WAV, OGG, MP4, WEBM, and M4A formats up to 15MB.
+        </p>
+        <div class="code-block-wrapper">
+          <pre class="code-block">curl -X POST https://rate.scorpion.codes/api/v1/rate \
+  -H "x-api-key: CGview98!!" \
+  -F "audio=@candidate.mp3"</pre>
+          <button class="copy-btn" data-copy>Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="endpoint-card">
+      <div class="endpoint-header">
+        <span class="method-badge method-get">GET</span>
+        <span class="endpoint-url">/api/v1/ratings</span>
+      </div>
+      <div class="endpoint-body">
+        <p class="endpoint-description">
+          Get a paginated list of all ratings. Use query parameters for pagination and filtering.
+        </p>
+        <div class="code-block-wrapper">
+          <pre class="code-block">curl -X GET "https://rate.scorpion.codes/api/v1/ratings?limit=10" \
+  -H "x-api-key: CGview98!!"</pre>
+          <button class="copy-btn" data-copy>Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="endpoint-card">
+      <div class="endpoint-header">
+        <span class="method-badge method-get">GET</span>
+        <span class="endpoint-url">/api/v1/stats</span>
+      </div>
+      <div class="endpoint-body">
+        <p class="endpoint-description">
+          Get aggregate statistics including total ratings, average scores, and recommendation distribution.
+        </p>
+        <div class="code-block-wrapper">
+          <pre class="code-block">curl -X GET https://rate.scorpion.codes/api/v1/stats \
+  -H "x-api-key: CGview98!!"</pre>
+          <button class="copy-btn" data-copy>Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="endpoint-card">
+      <div class="endpoint-header">
+        <span class="method-badge method-delete">DELETE</span>
+        <span class="endpoint-url">/api/v1/ratings/:id</span>
+      </div>
+      <div class="endpoint-body">
+        <p class="endpoint-description">
+          Delete a specific rating by ID. This action is irreversible.
+        </p>
+        <div class="code-block-wrapper">
+          <pre class="code-block">curl -X DELETE https://rate.scorpion.codes/api/v1/ratings/123 \
+  -H "x-api-key: CGview98!!"</pre>
+          <button class="copy-btn" data-copy>Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Response Format -->
+    <section class="card" style="margin-top: 24px;">
+      <div class="card-header">
+        <h2 class="card-title">
+          <span class="card-title-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          Response Format
+        </h2>
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 15px;">
+        The rating endpoint returns a comprehensive assessment object.
+      </p>
+      <div class="code-block-wrapper">
+        <pre class="code-block">{
+  "success": true,
+  "rating": {
+    "overall_score": 8.2,
+    "criteria": {
+      "phone_intelligibility": 9,
+      "pronunciation_clarity": 8,
+      "business_english_delivery": 8,
+      "confidence_sales_tone": 8,
+      "pace_smoothness": 8,
+      "recording_quality": 9
+    },
+    "summary": "Strong candidate with excellent phone intelligibility...",
+    "strengths": ["Clear pronunciation", "Professional tone"],
+    "weaknesses": ["Could improve energy level"],
+    "recommendation": "Recommended"
+  }
+}</pre>
+        <button class="copy-btn" data-copy>Copy</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
